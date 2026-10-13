@@ -1,0 +1,9 @@
+#!name=MOA 版本伪装（强制升级测试）
+#!desc=把 MOA 请求头 moa3versioncode 与 User-Agent 中的版本号伪装成新版，用于测试服务端是否据此判定强制升级。不需要时请关闭本插件。
+#!author=Chief
+
+[Script]
+http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=http://192.168.143.199:8000/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
+
+[MITM]
+hostname = %APPEND% sc.moazq.chinamobile.com
