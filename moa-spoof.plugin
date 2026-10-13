@@ -3,8 +3,15 @@
 #!author=Chief
 
 [Script]
-http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=https://raw.githubusercontent.com/leesincool6/loon/refs/heads/main/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
-#!http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=http://192.168.143.199:8000/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
+
+# 【线路 1：国内加速镜像 - 默认启用】
+http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=https://ghproxy.net/https://raw.githubusercontent.com/leesincool6/loon/refs/heads/main/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
+
+# 【线路 2：GitHub 官方直连 - 备用】若加速镜像失效，在上面那行开头加 # 注释掉，并删除本行开头的 # 即可切换
+# http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=https://raw.githubusercontent.com/leesincool6/loon/refs/heads/main/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
+
+# 【原版，无需使用】
+# http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=http://192.168.143.199:8000/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
 
 [MITM]
 hostname = %APPEND% sc.moazq.chinamobile.com
