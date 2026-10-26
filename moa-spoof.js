@@ -1,6 +1,6 @@
 // MOA 版本伪装：把请求头 moa3versioncode / User-Agent 里的版本号改掉
 // 用途：测试服务端是否依据请求头判定「强制升级」
-const FAKE = "3.3.68";
+const FAKE = "3.3.74";
 
 try {
   const headers = ($request && $request.headers) ? $request.headers : {};
