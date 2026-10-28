@@ -3,7 +3,7 @@
 #!author=Chief
 
 [Script]
-####################################分公司子域名
+#########分公司子域名
 #!name=MOA 版本伪装（全国通用版）
 #!desc=把 MOA 请求头 moa3versioncode 与 User-Agent 中的版本号伪装成新版，支持全地域省份节点。不需要时请关闭本插件。
 #!author=Chief
@@ -17,7 +17,7 @@
 # 【线路 3：jsDelivr CDN 镜像 - 备用】
 # http-request ^https?://[a-z]+\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=https://fastly.jsdelivr.net/gh/leesincool6/loon@main/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
 
-####################################单sc域名
+##########单sc域名
 # 【线路 1：国内加速镜像 - 默认启用】
 http-request ^https?://sc\.moazq\.chinamobile\.com/moa5/api/interface/v1/api/(isNotUpgrade|getNewestVersion) script-path=https://ghproxy.net/https://raw.githubusercontent.com/leesincool6/loon/refs/heads/main/moa-spoof.js, requires-body=false, timeout=10, tag=MOA版本伪装
 
