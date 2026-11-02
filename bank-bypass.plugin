@@ -1,0 +1,21 @@
+[Name]
+# 农行等银行防检测与直连优化插件
+[Author]
+# Assistant
+[Description]
+# 解决 Loon 环境下中国农业银行等国内银行 App 提示网络环境存在安全风险、环境异常等问题。
+
+[General]
+# 将农行及主流银联相关域名加入跳过系统代理与真实 IP 解析列表
+skip-proxy = *.abchina.com, *.abchina.com.cn, *.95599.cn, *.95516.com, *.unionpay.com, *.unionpaysecure.com
+real-ip = *.abchina.com, *.abchina.com.cn, *.95599.cn, *.95516.com, *.unionpay.com, *.unionpaysecure.com
+
+[Rule]
+# 强制农行相关流量走直连
+DOMAIN-SUFFIX, abchina.com, DIRECT
+DOMAIN-SUFFIX, abchina.com.cn, DIRECT
+DOMAIN-SUFFIX, 95599.cn, DIRECT
+
+[MITM]
+# 排除对农行及相关安全网关的 HTTPS 证书解密（防止触发证书校验风控）
+hostname = -*.abchina.com, -*.abchina.com.cn, -*.95599.cn
