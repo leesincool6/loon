@@ -1,0 +1,20 @@
+# NAME: Muse (Meta AI)
+# AUTHOR: Custom
+# UPDATED: 2026-11-06
+# DESCRIPTION: Meta Muse.ai 分流规则
+
+# > Muse.ai 核心域名
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-KEYWORD,muse.ai
+
+# > Muse 静态资源与用户分享内容 (CDN/UGC)
+DOMAIN-SUFFIX,metaaiusercontent.com
+
+# > Meta AI 底层接口与资源
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaai.com
+
+# > Meta 认证与基础接口 (若你已有独立的 Meta/Facebook 规则集，可注释掉以下部分)
+DOMAIN,graph.facebook.com
+DOMAIN-SUFFIX,accountkit.com
+
